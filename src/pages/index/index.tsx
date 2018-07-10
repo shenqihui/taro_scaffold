@@ -24,6 +24,11 @@ class Index extends Component {
     navigationBarTitleText: '首页'
   }
 
+  constructor(props) {
+    super(props);
+    debugAdd('index', this);
+  }
+
   componentWillReceiveProps (nextProps) {
     console.log(this.props, nextProps)
   }
