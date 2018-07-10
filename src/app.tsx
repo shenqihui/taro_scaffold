@@ -4,16 +4,12 @@ import { Provider } from '@tarojs/redux';
 
 import Index from './pages/index';
 import configStore from './store';
-import $global from './utils/global';
-import { debugAdd } from './utils/debug';
+import { debugAdd, globalAdd } from './utils/debug';
+import Services from './services';
 
 import './app.scss';
 
-$global.Taro = Taro;
-
 const store = configStore();
-
-$global.store = store;
 
 class App extends Component {
   config = {
@@ -51,3 +47,7 @@ class App extends Component {
 }
 
 Taro.render(<App />, document.getElementById('app'));
+
+globalAdd('Services', Services);
+globalAdd('Taro', Taro);
+globalAdd('store', store);
