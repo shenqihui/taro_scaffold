@@ -1,3 +1,3 @@
-const $global = require('core-js/library/modules/_global.js');
+import $global from 'core-js/library/modules/_global.js';
 
 export default $global;

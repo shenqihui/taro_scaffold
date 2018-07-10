@@ -1,9 +1,10 @@
 import $global from './global';
 
-$global.debugAdd = function debugAdd(key, memory) {
+function debugAdd(key, memory) {
   $global.debugAddSave = $global.debugAddSave || {};
   $global.debugAddSave[key] = memory;
 };
+$global.debugAdd = debugAdd;
 
 function globalAdd(key, memory) {
   $global[key] = memory;
