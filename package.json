@@ -10,7 +10,7 @@
     "dev:weapp": "npm run build:weapp -- --watch",
     "dev:h5": "npm run build:h5 -- --watch",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint --ext .js --fix src"
+    "lint": "eslint --ext .js --ext .tsx --fix src"
   },
   "author": "",
   "license": "MIT",

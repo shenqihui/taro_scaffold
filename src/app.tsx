@@ -25,7 +25,7 @@ class App extends Component {
       navigationBarBackgroundColor: '#fff',
       navigationBarTitleText: 'WeChat',
       navigationBarTextStyle: 'black',
-    }
+    },
   }
 
   constructor(props) {
@@ -46,8 +46,8 @@ class App extends Component {
       <Provider store={store}>
         <Index />
       </Provider>
-    )
+    );
   }
 }
 
-Taro.render(<App />, document.getElementById('app'))
+Taro.render(<App />, document.getElementById('app'));

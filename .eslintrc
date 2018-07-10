@@ -1,4 +1,5 @@
 {
+  root: true,
   "extends": ["taro"],
   "rules": {
     "no-unused-vars": ["error", { "varsIgnorePattern": "Taro" }],
@@ -7,6 +8,7 @@
     "no-extra-semi": 0,
     "semi": [2, "always"],
     "yoda": [1, "always"],
+    'react/jsx-filename-extension': 0,
     "brace-style": [
       2,
       "stroustrup"
