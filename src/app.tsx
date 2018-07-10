@@ -1,35 +1,45 @@
-import Taro, { Component } from '@tarojs/taro'
-import '@tarojs/async-await'
-import { Provider } from '@tarojs/redux'
+import Taro, { Component } from '@tarojs/taro';
+import '@tarojs/async-await';
+import { Provider } from '@tarojs/redux';
 
-import Index from './pages/index'
+import Index from './pages/index';
+import configStore from './store';
+import $global from './utils/global';
+import { debugAdd } from './utils/debug';
 
-import configStore from './store'
+import './app.scss';
 
-import './app.scss'
+$global.Taro = Taro;
 
-const store = configStore()
+const store = configStore();
+
+$global.store = store;
 
 class App extends Component {
   config = {
     pages: [
-      'pages/index/index'
+      'pages/index/index',
     ],
     window: {
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#fff',
       navigationBarTitleText: 'WeChat',
-      navigationBarTextStyle: 'black'
+      navigationBarTextStyle: 'black',
     }
   }
 
-  componentDidMount () {}
+  constructor(props) {
+    super(props);
+    debugAdd('app', this);
+  }
 
-  componentDidShow () {}
+  componentDidMount = () => {}
 
-  componentDidHide () {}
+  componentDidShow = () => {}
 
-  componentCatchError () {}
+  componentDidHide = () => {}
+
+  componentCatchError = () => {}
 
   render () {
     return (
