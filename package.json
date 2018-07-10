@@ -32,17 +32,18 @@
     "@tarojs/plugin-babel": "^0.0.68",
     "@tarojs/plugin-csso": "^0.0.68",
     "@tarojs/plugin-sass": "^0.0.68",
+    "@tarojs/plugin-typescript": "^0.0.68",
     "@tarojs/plugin-uglifyjs": "^0.0.68",
     "@tarojs/webpack-runner": "^0.0.68",
+    "babel-eslint": "^8.2.3",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-decorators-legacy": "^1.3.4",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.6.1",
-    "babel-eslint": "^8.2.3",
     "eslint": "^4.19.1",
     "eslint-config-taro": "^0.0.68",
-    "eslint-plugin-react": "^7.8.2",
     "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-react": "^7.8.2",
     "eslint-plugin-taro": "^0.0.68"
   }
 }
