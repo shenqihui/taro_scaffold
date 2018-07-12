@@ -42,7 +42,7 @@ class Component extends Taro.Component {
 
   componentDidHide () { }
 
-  render = () => {
+  render() {
     return (<View>
       <View>componentDidMount 后三秒会调用更新学生列表的请求。</View>
 

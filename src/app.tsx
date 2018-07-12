@@ -2,9 +2,9 @@ import Taro, { Component } from '@tarojs/taro';
 import '@tarojs/async-await';
 import { Provider } from '@tarojs/redux';
 
+import { debugAdd, globalAdd } from './utils/debug';
 import Index from './pages/index';
 import store from './store';
-import { debugAdd, globalAdd } from './utils/debug';
 import Services from './services';
 
 import './app.scss';
