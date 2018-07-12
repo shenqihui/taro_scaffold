@@ -3,13 +3,11 @@ import '@tarojs/async-await';
 import { Provider } from '@tarojs/redux';
 
 import Index from './pages/index';
-import configStore from './store';
+import { store } from './store';
 import { debugAdd, globalAdd } from './utils/debug';
 import Services from './services';
 
 import './app.scss';
-
-const store = configStore();
 
 class App extends Component {
   config = {

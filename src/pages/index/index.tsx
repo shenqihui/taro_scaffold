@@ -1,26 +1,19 @@
-import Taro, { Component } from '@tarojs/taro';
+import Taro from '@tarojs/taro';
 import { View, Button } from '@tarojs/components';
 import { connect } from '@tarojs/redux';
 
+import store from '../../store';
+
 import { debugAdd } from '../../utils/debug';
-import { add, minus, asyncAdd } from '../../actions/counter';
 
 import './index.scss';
 
-@connect(({ counter }) => ({
-  counter,
-}), (dispatch) => ({
-  add () {
-    dispatch(add());
-  },
-  dec () {
-    dispatch(minus());
-  },
-  asyncAdd () {
-    dispatch(asyncAdd());
-  },
-}))
-class Index extends Component {
+@connect((state) => {
+  return {
+    studentState: state.student,
+  };
+})
+class Component extends Taro.Component {
   config = {
     navigationBarTitleText: '首页',
   }
@@ -28,6 +21,7 @@ class Index extends Component {
   constructor(props) {
     super(props);
     debugAdd('index', this);
+    this.store = store;
   }
 
   componentWillReceiveProps (nextProps) {
@@ -41,16 +35,16 @@ class Index extends Component {
   componentDidHide () { }
 
   render () {
-    return (
+    return (<View>
+      <View>试下调用： debugAddSave.index.store.dispatcher.student.addTotal()</View>
+
+      <View>---</View>
+
       <View className='index'>
-        <Button className='add_btn' onClick={this.props.add}>+</Button>
-        <Button className='dec_btn' onClick={this.props.dec}>-</Button>
-        <Button className='dec_btn' onClick={this.props.asyncAdd}>async</Button>
-        <View>{this.props.counter.num}</View>
-        <View>Hello, World</View>
+        { JSON.stringify(this.props.studentState) }
       </View>
-    );
+    </View>);
   }
 }
 
-export default Index;
+export default Component;

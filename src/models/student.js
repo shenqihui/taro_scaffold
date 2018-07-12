@@ -25,6 +25,11 @@ const modelExtend = {
       };
     },
   },
+  mutations: {
+    addTotal: (state) => {
+      state.total += 1;
+    },
+  },
   effects: {
     *list({ payload = {} }, { call, put, select }) {
       const { page = 1, pageSize: pageSizeArgs, query = '', filter = '', orderBy = '', sort = '' } = payload;
