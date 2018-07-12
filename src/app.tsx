@@ -3,7 +3,7 @@ import '@tarojs/async-await';
 import { Provider } from '@tarojs/redux';
 
 import Index from './pages/index';
-import { store } from './store';
+import store from './store';
 import { debugAdd, globalAdd } from './utils/debug';
 import Services from './services';
 

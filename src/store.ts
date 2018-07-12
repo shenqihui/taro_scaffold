@@ -1,14 +1,11 @@
-import { debugAdd, globalAdd } from './utils/debug';
-const weappx = require('weappx');
+// import { globalAdd } from './utils/debug';
+import * as dvaCore from './dva-core';
 
-const app = weappx();
+const dvaApp = dvaCore.create();
+/* eslint-disable import/newline-after-import */
+dvaApp.model(require('./models/student').default);
+/* eslint-enable */
+dvaApp.start();
+const store = dvaApp._store;
 
-console.log("require('./models/student').default", require('./models/student').default);
-
-app.model(require('./models/student').default);
-
-const store = app.start();
-
-globalAdd('weappx', app);
-export default app;
-export { store };
+export default store;
