@@ -11,6 +11,7 @@ import './index.scss';
 @connect((state) => {
   return {
     studentState: state.student,
+    // studentStateLoading: !!state.loading.models.student,
   };
 })
 class Component extends Taro.Component {
@@ -47,6 +48,7 @@ class Component extends Taro.Component {
       <View>componentDidMount 后三秒会调用更新学生列表的请求。</View>
 
       <View>---</View>
+      <View>studentStateLoading: { JSON.stringify(this.props.studentStateLoading) }</View>
       <View className='index'>
         { JSON.stringify(this.props.studentState) }
       </View>

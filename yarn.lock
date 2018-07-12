@@ -2545,6 +2545,12 @@ dva-core@^1.3.0:
     redux-saga "^0.16.0"
     warning "^3.0.0"
 
+dva-loading@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/dva-loading/-/dva-loading-2.0.3.tgz#4719c7b54bca1f89a212628ee279affefea953e6"
+  dependencies:
+    "@babel/runtime" "^7.0.0-beta.34"
+
 ecc-jsbn@~0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/ecc-jsbn/-/ecc-jsbn-0.1.1.tgz#0fc73a9ed5f0d53c38193398523ef7e543777505"
