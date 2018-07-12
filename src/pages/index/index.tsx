@@ -21,10 +21,18 @@ class Component extends Taro.Component {
   constructor(props) {
     super(props);
     debugAdd('index', this);
-    this.store = store;
   }
 
-  componentWillReceiveProps (nextProps) {
+  componentDidMount = () => {
+    setTimeout(() => {
+      this.props.dispatch({
+        url: 'student/list',
+        payload: {},
+      });
+    }, 3000);
+  }
+
+  componentWillReceiveProps = (nextProps) => {
     console.log(this.props, nextProps);
   }
 
@@ -34,12 +42,11 @@ class Component extends Taro.Component {
 
   componentDidHide () { }
 
-  render () {
+  render = () => {
     return (<View>
-      <View>试下调用： debugAddSave.index.store.dispatcher.student.addTotal()</View>
+      <View>componentDidMount 后三秒会调用更新学生列表的请求。</View>
 
       <View>---</View>
-
       <View className='index'>
         { JSON.stringify(this.props.studentState) }
       </View>
