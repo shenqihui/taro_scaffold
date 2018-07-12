@@ -11,7 +11,7 @@ import './index.scss';
 @connect((state) => {
   return {
     studentState: state.student,
-    // studentStateLoading: !!state.loading.models.student,
+    studentStateLoading: !!state.loading.models.student,
   };
 })
 class Component extends Taro.Component {
@@ -27,7 +27,7 @@ class Component extends Taro.Component {
   componentDidMount = () => {
     setTimeout(() => {
       this.props.dispatch({
-        url: 'student/list',
+        type: 'student/list',
         payload: {},
       });
     }, 3000);
