@@ -1,45 +1,46 @@
 import Taro from '@tarojs/taro';
 
+import http from '../utils/http';
+
 const services = {};
-const API_URL_BASE = 'https://easy-mock.com/mock/5b44685824d4c9626905256b/taro-scaffold';
 
 services.list = ({ query = '', page = 1, filters = '', pageSize = 10, select = '' }) => {
-  return Taro.request({
-    url: `${API_URL_BASE}/student?page=${page}&per_page=${pageSize}&filter=${filters}&select=${select}&${query}`,
-    method: 'GET',
+  return http({
+    url: `/student?page=${page}&per_page=${pageSize}&filter=${filters}&select=${select}&${query}`,
+    method: 'get',
   });
 };
 
 // 详情
 services.detail = ({ id, select = ['sng_admin.name'].join(',') }) => {
-  return Taro.request({
-    url: `${API_URL_BASE}/student/${id}?select=${select}`,
-    method: 'GET',
+  return http({
+    url: `/student/${id}?select=${select}`,
+    method: 'get',
   });
 };
 
 // 删除
 services.remove = (id) => {
-  return Taro.request({
-    url: `${API_URL_BASE}/student/${id}`,
-    method: 'DELETE',
+  return http({
+    url: `/student/${id}`,
+    method: 'delete',
   });
 };
 
 // 编辑
 services.update = (id, values) => {
-  return Taro.request({
-    url: `${API_URL_BASE}/student/${id}`,
-    method: 'PUT',
+  return http({
+    url: `/student/${id}`,
+    method: 'put',
     data: JSON.stringify(values),
   });
 };
 
 // 新增
 services.create = (values) => {
-  return Taro.request({
-    url: `${API_URL_BASE}/student`,
-    method: 'POST',
+  return http({
+    url: `/student`,
+    method: 'post',
     body: JSON.stringify(values),
   });
 };
