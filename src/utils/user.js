@@ -6,7 +6,7 @@ import DecodeJWT from 'jwt-decode';
 const TokenName = 'jwtToken';
 const UserInfoName = 'USER_INFO';
 
-export class User {
+class UserUtil {
   // constructor() {
   //   // console.log('User constructor');
   // }
@@ -143,4 +143,6 @@ export class User {
   }
 }
 
-export default new User();
+export { UserUtil };
+
+export default new UserUtil();
