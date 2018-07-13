@@ -39,7 +39,7 @@ services.update = (id, values) => {
 // 新增
 services.create = (values) => {
   return http({
-    url: `/student`,
+    url: '/student',
     method: 'post',
     body: JSON.stringify(values),
   });

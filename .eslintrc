@@ -8,7 +8,9 @@
     "no-extra-semi": 0,
     "semi": [2, "always"],
     "yoda": [1, "always"],
-    'react/jsx-filename-extension': 0,
+    "react/jsx-filename-extension": 0,
+    "quotes": [2, "single", "avoid-escape"],
+    "react/jsx-tag-spacing": ["beforeSelfClosing"],
     "brace-style": [
       2,
       "stroustrup"

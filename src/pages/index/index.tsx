@@ -1,8 +1,6 @@
 import Taro from '@tarojs/taro';
-import { View, Button } from '@tarojs/components';
+import { View } from '@tarojs/components';
 import { connect } from '@tarojs/redux';
-
-import store from '../../store';
 
 import { debugAdd } from '../../utils/debug';
 

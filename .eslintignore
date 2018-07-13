@@ -1,2 +1,3 @@
 node_modules/**/*
 src/dva-core/**/*
+src/dva-loading/**/*
