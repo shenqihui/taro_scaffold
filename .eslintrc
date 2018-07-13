@@ -16,5 +16,8 @@
       "stroustrup"
     ],
   },
+  globals: {
+    wx: true,
+  },
   "parser": "babel-eslint"
 }

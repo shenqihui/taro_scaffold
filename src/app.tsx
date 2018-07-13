@@ -6,6 +6,7 @@ import { debugAdd, globalAdd } from './utils/debug';
 import Index from './pages/index';
 import store from './store';
 import Services from './services';
+import User from './utils/user';
 
 import './app.scss';
 
@@ -49,3 +50,4 @@ Taro.render(<App />, document.getElementById('app'));
 globalAdd('Services', Services);
 globalAdd('Taro', Taro);
 globalAdd('store', store);
+globalAdd('User', User);
