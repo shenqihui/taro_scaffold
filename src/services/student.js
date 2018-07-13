@@ -6,7 +6,7 @@ const services = {};
 
 services.list = ({ query = '', page = 1, filters = '', pageSize = 10, select = '' }) => {
   return http({
-    url: `/student?page=${page}&per_page=${pageSize}&filter=${filters}&select=${select}&${query}`,
+    url: `/student?page=${page}&per_page=${pageSize}&filter=${filters}&select=${select}${query ? '&' : '' }${query}`,
     method: 'get',
   });
 };
