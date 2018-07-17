@@ -1,0 +1,74 @@
+@import "../.sprites/sprites";
+@import "../.sprites/sprites-base64";
+
+@function pxToRpx($px, $base: 1px) {
+  @return ($px / $base) * 1rpx;
+}
+
+@function strip-unit($px, $base: 1px) {
+  @return ($px / $base) * 1;
+}
+
+@mixin sprite($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  $sprite-width: nth($sprite, 5);
+  $sprite-height: nth($sprite, 6);
+  $sprite-total-width: nth($sprite, 7);
+  $sprite-total-height: nth($sprite, 8);
+  $sprite-image: nth($sprite, 9);
+
+  $sprite-rw: $sprite-total-width / $sprite-width;
+  $sprite-rh: $sprite-total-height / $sprite-height;
+  $sprite-rx: $sprite-offset-x / ($sprite-total-width - $sprite-width);
+  $sprite-ry: $sprite-offset-y / ($sprite-total-height - $sprite-height);
+
+  @if $sprite-rw == NaN or $sprite-rw == Infinity {
+    $sprite-rx: 0;
+  }
+
+  @if $sprite-rh == NaN or $sprite-rh == Infinity {
+    $sprite-rx: 0;
+  }
+
+  @if $sprite-rx == NaN or $sprite-rx == Infinity {
+    $sprite-rx: strip-unit($sprite-offset-x);
+  }
+
+  @if $sprite-ry == NaN or $sprite-ry == Infinity {
+    $sprite-ry: strip-unit($sprite-offset-y);
+  }
+
+  $sprite-rx: abs($sprite-rx);
+  $sprite-ry: abs($sprite-ry);
+
+  width: pxToRpx($sprite-width);
+  height: pxToRpx($sprite-height);
+
+  background-repeat: no-repeat;
+  background-size: percentage($sprite-rw) percentage($sprite-rh);
+  background-position: percentage($sprite-rx) percentage($sprite-ry);
+}
+
+
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+
+    .sp.sp-#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}
+
+@if mixin-exists(sprites) and global-variable-exists('spritesheet-sprites')  and global-variable-exists('spritesheet') {
+  .sp {
+    display: inline-block;
+    transition: all .35s ease-in-out;
+    $bg-url: nth($spritesheet, 3);
+    // background-image: url("/.sprites/#{$bg-url}");
+  }
+
+
+  @include sprites($spritesheet-sprites);
+}

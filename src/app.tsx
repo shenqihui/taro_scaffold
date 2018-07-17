@@ -1,4 +1,4 @@
-import Taro, { Component } from '@tarojs/taro';
+import Taro from '@tarojs/taro';
 import '@tarojs/async-await';
 import { Provider } from '@tarojs/redux';
 
@@ -10,7 +10,7 @@ import User from './utils/user';
 
 import './app.scss';
 
-class App extends Component {
+class Component extends Taro.Component {
   config = {
     pages: [
       'pages/index/index',
@@ -45,7 +45,7 @@ class App extends Component {
   }
 }
 
-Taro.render(<App />, document.getElementById('app'));
+Taro.render(<Component />, document.getElementById('app'));
 
 globalAdd('Services', Services);
 globalAdd('Taro', Taro);

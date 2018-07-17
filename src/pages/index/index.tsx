@@ -43,6 +43,14 @@ class Component extends Taro.Component {
 
   render() {
     return (<View>
+      <View className="">雪碧图</View>
+      <View className="sp sp-camera" />
+      <View className="sp sp-checked_cyan" />
+      <View className="sp sp-circle_green" />
+      <View className="sp sp-exclamation_circle" />
+
+      <View>---</View>
+
       <View>componentDidMount 后三秒会调用更新学生列表的请求。</View>
 
       <View>---</View>

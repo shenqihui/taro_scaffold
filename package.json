@@ -10,7 +10,12 @@
     "dev:weapp": "npm run build:weapp -- --watch",
     "dev:h5": "npm run build:h5 -- --watch",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint --ext .js --ext .tsx --fix src"
+    "lint": "eslint --ext .js --ext .tsx --fix src",
+    "cleanCache": "rimraf dist && rimraf src/.sprites",
+    "spwatch": "gulp watch",
+    "spbuild": "gulp build",
+    "start": "npm run cleanCache && npm run spbuild && npm run spwatch | npm run dev:weapp",
+    "release": "npm run cleanCache && npm run spbuild && npm run build:weapp"
   },
   "author": "",
   "license": "MIT",
@@ -24,6 +29,8 @@
     "@tarojs/taro-h5": "^0.0.68",
     "@tarojs/taro-weapp": "^0.0.68",
     "axios": "^0.18.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-filter": "^5.1.0",
     "jwt-decode": "^2.2.0",
     "wepy-plugin-axios": "^0.1.8"
   },
@@ -46,6 +53,10 @@
     "eslint-config-taro": "^0.0.68",
     "eslint-plugin-import": "^2.12.0",
     "eslint-plugin-react": "^7.8.2",
-    "eslint-plugin-taro": "^0.0.68"
+    "eslint-plugin-taro": "^0.0.68",
+    "gulp": "^3.9.1",
+    "gulp-image-data-uri": "^1.2.2",
+    "gulp-watch": "^5.0.0",
+    "gulp.spritesmith": "^6.9.0"
   }
 }
