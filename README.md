@@ -5,7 +5,7 @@
 https://nervjs.github.io/taro
 
 # 关于 sprite
-由于 Taro 目前已知没支持 sprite ，如果需要的话，就可以直接使用 gulp 开启一个 sprite 任务。  
+由于 Taro 目前已知尚未支持 sprite ，如果需要的话，就可以直接使用 gulp 开启一个 sprite 任务。  
 yarn spwatch : 监控形式的 sprite 任务。  
 yarn spbuild : 打包形式的 sprite 任务。  
 
