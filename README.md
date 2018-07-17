@@ -5,20 +5,23 @@
 https://nervjs.github.io/taro
 
 # 关于 sprite
-由于 Taro 目前已知没支持 sprite ，如果需要的话，就可以直接使用 gulp 开启一个 sprite 任务。
-yarn spwatch : 监控形式的 sprite 任务。
-yarn spbuild : 打包形式的 sprite 任务。
+由于 Taro 目前已知没支持 sprite ，如果需要的话，就可以直接使用 gulp 开启一个 sprite 任务。  
+yarn spwatch : 监控形式的 sprite 任务。  
+yarn spbuild : 打包形式的 sprite 任务。  
 
 ## sprite 图片存放路径
 放在 src/sprites 下面，里面的 `src/sprites/_sprites.scss` 为基础的模板。
 
 ## sprite 临时文件
-`src/.sprites` 文件夹，`sprites-base64.scss` 为 base64 的背景图存放信息， `sprites.scss` 为 sprites 输出的 scss ， `sprites.png` 为合并之后的 sprites 图，`sprites-base64.scss` 生成之后就没使用了。
+位于 `src/.sprites` 文件夹。  
+`sprites-base64.scss` 为 base64 的背景图存放信息。  
+`sprites.scss` 为 sprites 输出的 scss 。  
+ `sprites.png` 为合并之后的 sprites 图，`sprites-base64.scss` 生成之后就没使用了。
 
 # 项目 scripts
-yarn start , 这个会直接开启 sprite 和 taro 的开发任务
-yarn release , 打包的，会包含 sprite 以及 taro 的打包语法一起打包。
-`package.json` 中其他 scripts 指令，和 taro 或者其他相同。可以试一下。
+yarn start , 这个会直接开启 sprite 和 taro 的开发任务  
+yarn release , 打包的，会包含 sprite 以及 taro 的打包语法一起打包。  
+`package.json` 中其他 scripts 指令，和 taro 或者其他相同。可以试一下。  
 
 # 如何使用
 
