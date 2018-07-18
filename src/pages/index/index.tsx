@@ -1,5 +1,5 @@
 import Taro from '@tarojs/taro';
-import { View } from '@tarojs/components';
+import { View, Image } from '@tarojs/components';
 import { connect } from '@tarojs/redux';
 
 import { debugAdd } from '../../utils/debug';
@@ -43,6 +43,14 @@ class Component extends Taro.Component {
 
   render() {
     return (<View>
+      <View className="">图片</View>
+      <Image style={{ width: '22px', height: '22px' }} src={require('../../images/camera.png')} />
+      <Image style={{ width: '19px', height: '19px' }} src={require('../../images/checked_cyan.png')} />
+      <Image style={{ width: '19px', height: '19px' }} src={require('../../images/circle_green.png')} />
+      <Image style={{ width: '19px', height: '19px' }} src={require('../../images/exclamation_circle.png')} />
+
+      <View>---</View>
+
       <View className="">雪碧图</View>
       <View className="sp sp-camera" />
       <View className="sp sp-checked_cyan" />
