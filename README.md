@@ -35,6 +35,7 @@ yarn spbuild : 打包形式的 sprite 任务。
 
 # tags
 
+- v0.3.0: 加入 wxs 的说明，以及 js 和 jsx 中导入的不同情况例子。（尚未支持 iview）
 - v0.2.0: 加入了 sprites
 - v0.1.3: 改用 axios
 - v0.1.2: 使用 dva 的 redux 模式进行处理
