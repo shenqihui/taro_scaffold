@@ -14,6 +14,7 @@ class Component extends Taro.Component {
   config = {
     pages: [
       'pages/index/index',
+      'pages/jump/index',
     ],
     window: {
       backgroundTextStyle: 'light',

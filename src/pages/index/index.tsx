@@ -54,24 +54,15 @@ class Component extends Taro.Component {
     return moment().year() - moment.unix(this.state.age).year();
   }
 
+  jump = () => {
+    Taro.navigateTo({
+      url: '/pages/jump/index',
+    });
+  }
+
   render() {
     return (<View>
-      {
-         /*
-          <View>iView 组件</View>
-          <IAvatar size="small">梁</IAvatar>
-          <View>---</View>
-        */
-      }
-
-
-      <View className="">WXS</View>
-      <View>jsx 中，不建议使用 wxs 了，直接使用内部函数即可。
-      </View>
-      <View>如果一定要用，看这个东西下面的 data-age 属性，不过要先把 wxs 文件拷贝到 dist 目录，解除下一行的注释(目前 taro 不自动输出过去)</View>
-      {/*<wxs src="../../wxs/index.wxs" module="filters" />*/}
-      <View>get: { get(this.state, 'age') }</View>
-      <View data-age="{{ filters.age(153137899) }}">{ this.age(this.state.age) } </View>
+      <View className="" onClick={this.jump}>点击跳转</View>
       <View>---</View>
 
       <View className="">图片</View>
@@ -91,12 +82,31 @@ class Component extends Taro.Component {
       <View>---</View>
 
       <View>componentDidMount 后三秒会调用更新学生列表的请求。</View>
-
-      <View>---</View>
+      <View className="">dva redux</View>
       <View>studentStateLoading: { JSON.stringify(this.props.studentStateLoading) }</View>
       <View className='index'>
         { JSON.stringify(this.props.studentState) }
       </View>
+
+      <View>---</View>
+
+      {
+         /*
+          <View>iView 组件</View>
+          <IAvatar size="small">梁</IAvatar>
+          <View>---</View>
+        */
+      }
+
+      <View className="">WXS</View>
+      <View>jsx 中，不建议使用 wxs 了，直接使用内部函数即可。
+      </View>
+      <View>如果一定要用，看这个东西下面的 data-age 属性，不过要先把 wxs 文件拷贝到 dist 目录，解除下一行的注释(目前 taro 不自动输出过去)</View>
+      {/*<wxs src="../../wxs/index.wxs" module="filters" />*/}
+      <View>get: { get(this.state, 'age') }</View>
+      <View data-age="{{ filters.age(153137899) }}">{ this.age(this.state.age) } </View>
+      <View>---</View>
+
     </View>);
   }
 }
