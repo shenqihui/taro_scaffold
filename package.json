@@ -31,7 +31,10 @@
     "axios": "^0.18.0",
     "gulp-concat": "^2.6.1",
     "gulp-filter": "^5.1.0",
+    "iview-weapp": "^1.1.0",
     "jwt-decode": "^2.2.0",
+    "lodash": "^4.17.10",
+    "moment": "^2.22.2",
     "wepy-plugin-axios": "^0.1.8"
   },
   "devDependencies": {

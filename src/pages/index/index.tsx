@@ -1,6 +1,12 @@
+// import 的骚操作
+import * as moment from 'moment';
+import * as get from 'lodash/get';
+
 import Taro from '@tarojs/taro';
 import { View, Image } from '@tarojs/components';
 import { connect } from '@tarojs/redux';
+
+// import IAvatar from '../../iview-weapp/avatar'
 
 import { debugAdd } from '../../utils/debug';
 
@@ -20,6 +26,9 @@ class Component extends Taro.Component {
   constructor(props) {
     super(props);
     debugAdd('index', this);
+    this.state = {
+      age: 153137899,
+    };
   }
 
   componentDidMount = () => {
@@ -41,8 +50,30 @@ class Component extends Taro.Component {
 
   componentDidHide () { }
 
+  age = (second) => {
+    return moment().year() - moment.unix(this.state.age).year();
+  }
+
   render() {
     return (<View>
+      {
+         /*
+          <View>iView 组件</View>
+          <IAvatar size="small">梁</IAvatar>
+          <View>---</View>
+        */
+      }
+
+
+      <View className="">WXS</View>
+      <View>jsx 中，不建议使用 wxs 了，直接使用内部函数即可。
+      </View>
+      <View>如果一定要用，看这个东西下面的 data-age 属性，不过要先把 wxs 文件拷贝到 dist 目录，解除下一行的注释(目前 taro 不自动输出过去)</View>
+      {/*<wxs src="../../wxs/index.wxs" module="filters" />*/}
+      <View>get: { get(this.state, 'age') }</View>
+      <View data-age="{{ filters.age(153137899) }}">{ this.age(this.state.age) } </View>
+      <View>---</View>
+
       <View className="">图片</View>
       <Image style={{ width: '22px', height: '22px' }} src={require('../../images/camera.png')} />
       <Image style={{ width: '19px', height: '19px' }} src={require('../../images/checked_cyan.png')} />

@@ -1,0 +1,5 @@
+var age = require('./age.wxs');
+
+module.exports = {
+  age: age,
+};
