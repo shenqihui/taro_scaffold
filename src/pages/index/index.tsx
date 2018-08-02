@@ -5,8 +5,8 @@ import * as get from 'lodash/get';
 import Taro from '@tarojs/taro';
 import { View, Image } from '@tarojs/components';
 import { connect } from '@tarojs/redux';
-// import A from '../../components/A/index';
-import B from '../../components/B/index';
+import A from '../../components/a';
+import B from '../../components/b';
 
 // import IAvatar from '../../iview-weapp/avatar'
 
@@ -69,12 +69,12 @@ class Component extends Taro.Component {
 
   render() {
     return (<View>
-      <View>组件引用</View>
-      {/*{
+      <View>组件引用（使用文档查看 '../../components/a' ）</View>
+      {
         this.state.x.map((item, index) => {
           return <A key={index} t={item} onClick={this.componentCallBack} />
          })
-      }*/}
+      }
       <B onClick={this.componentCallBack} />
       <B onClick={this.componentCallBack} />
 
