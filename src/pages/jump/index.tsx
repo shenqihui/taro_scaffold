@@ -1,5 +1,5 @@
 import Taro from '@tarojs/taro';
-import { View, Image } from '@tarojs/components';
+import { View } from '@tarojs/components';
 import { connect } from '@tarojs/redux';
 
 import { debugAdd } from '../../utils/debug';
@@ -14,7 +14,7 @@ import './index.scss';
 })
 class Component extends Taro.Component {
   config = {
-    navigationBarTitleText: '首页',
+    navigationBarTitleText: '跳转的页面',
   }
 
   constructor(props) {

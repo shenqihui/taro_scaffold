@@ -1,9 +1,6 @@
 // import 的骚操作
-import * as moment from 'moment';
-import * as get from 'lodash/get';
-
 import Taro from '@tarojs/taro';
-import { View, Image, Navigator } from '@tarojs/components';
+import { View } from '@tarojs/components';
 import A from '../../components/a';
 import B from '../../components/b';
 
@@ -13,12 +10,12 @@ import './index.scss';
 
 class Component extends Taro.Component {
   config = {
-    navigationBarTitleText: '首页',
+    navigationBarTitleText: 'component 例子',
   }
 
   constructor(props) {
     super(props);
-    debugAdd('index', this);
+    debugAdd('component', this);
     this.state = {
       x: [1, 2],
     };
@@ -55,7 +52,6 @@ class Component extends Taro.Component {
           </div>
          })
       }
-      <View className="division">---</View>
       <B onClick={this.componentCallBack} />
       <View className="division">---</View>
       <B onClick={this.componentCallBack} />

@@ -7,15 +7,13 @@ import { View, Image, Navigator } from '@tarojs/components';
 import A from '../../components/a';
 import B from '../../components/b';
 
-// import IAvatar from '../../iview-weapp/avatar'
-
 import { debugAdd } from '../../utils/debug';
 
 import './index.scss';
 
 class Component extends Taro.Component {
   config = {
-    navigationBarTitleText: '首页',
+    navigationBarTitleText: 'wxs 例子',
   }
 
   constructor(props) {

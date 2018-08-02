@@ -1,4 +1,3 @@
-// import 的骚操作
 import Taro from '@tarojs/taro';
 import { View, Navigator } from '@tarojs/components';
 import { connect } from '@tarojs/redux';
