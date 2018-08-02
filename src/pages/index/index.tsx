@@ -3,23 +3,12 @@ import * as moment from 'moment';
 import * as get from 'lodash/get';
 
 import Taro from '@tarojs/taro';
-import { View, Image } from '@tarojs/components';
-import { connect } from '@tarojs/redux';
-import A from '../../components/a';
-import B from '../../components/b';
-
-// import IAvatar from '../../iview-weapp/avatar'
+import { View, Navigator } from '@tarojs/components';
 
 import { debugAdd } from '../../utils/debug';
 
 import './index.scss';
 
-@connect((state) => {
-  return {
-    studentState: state.student,
-    studentStateLoading: !!state.loading.models.student,
-  };
-})
 class Component extends Taro.Component {
   config = {
     navigationBarTitleText: '首页',
@@ -28,19 +17,10 @@ class Component extends Taro.Component {
   constructor(props) {
     super(props);
     debugAdd('index', this);
-    this.state = {
-      age: 153137899,
-      x: [1, 2],
-    };
+    this.state = {};
   }
 
   componentDidMount = () => {
-    setTimeout(() => {
-      this.props.dispatch({
-        type: 'student/list',
-        payload: {},
-      });
-    }, 3000);
   }
 
   componentWillReceiveProps = (nextProps) => {
@@ -53,78 +33,34 @@ class Component extends Taro.Component {
 
   componentDidHide () { }
 
-  age = (second) => {
-    return moment().year() - moment.unix(this.state.age).year();
-  }
-
   jump = () => {
     Taro.navigateTo({
       url: '/pages/jump/index',
     });
   }
 
-  componentCallBack = () => {
-    console.log('componentCallBack');
-  }
-
   render() {
     return (<View>
-      <View>组件引用（使用文档查看 '../../components/a' ）</View>
-      {
-        this.state.x.map((item, index) => {
-          return <A key={index} t={item} onClick={this.componentCallBack} />
-         })
-      }
-      <B onClick={this.componentCallBack} />
-      <B onClick={this.componentCallBack} />
-
+      <View url="/pages/component/index">点击一下例子，进行查看 </View>
       <View className="division">---</View>
 
-      <View className="" onClick={this.jump}>点击跳转</View>
+      <Navigator className="link" url="/pages/component/index">组件引用 </Navigator>
       <View className="division">---</View>
 
-      <View className="">图片</View>
-      <Image style={{ width: '22px', height: '22px' }} src={require('../../images/camera.png')} />
-      <Image style={{ width: '19px', height: '19px' }} src={require('../../images/checked_cyan.png')} />
-      <Image style={{ width: '19px', height: '19px' }} src={require('../../images/circle_green.png')} />
-      <Image style={{ width: '19px', height: '19px' }} src={require('../../images/exclamation_circle.png')} />
-
+      <View className="link" onClick={this.jump}>点击后 api 跳转</View>
       <View className="division">---</View>
 
-      <View className="">雪碧图</View>
-      <View className="sp sp-camera" />
-      <View className="sp sp-checked_cyan" />
-      <View className="sp sp-circle_green" />
-      <View className="sp sp-exclamation_circle" />
-
+      <Navigator className="link" url="/pages/img/index">图片/雪碧图 </Navigator>
       <View className="division">---</View>
 
-      <View>componentDidMount 后三秒会调用更新学生列表的请求。</View>
-      <View className="">dva redux</View>
-      <View>studentStateLoading: { JSON.stringify(this.props.studentStateLoading) }</View>
-      <View className='index'>
-        { JSON.stringify(this.props.studentState) }
-      </View>
-
+      <Navigator className="link" url="/pages/dva/index">dva redux</Navigator>
       <View className="division">---</View>
 
-      {
-         /*
-          <View>iView 组件</View>
-          <IAvatar size="small">梁</IAvatar>
-          <View className="division">---</View>
-        */
-      }
-
-      <View className="">WXS</View>
-      <View>jsx 中，不建议使用 wxs 了，直接使用内部函数即可。
-      </View>
-      <View>如果一定要用，看这个东西下面的 data-age 属性，不过要先把 wxs 文件拷贝到 dist 目录，解除下一行的注释(目前 taro 不自动输出过去)</View>
-      {/*<wxs src="../../wxs/index.wxs" module="filters" />*/}
-      <View>get: { get(this.state, 'age') }</View>
-      <View data-age="{{ filters.age(153137899) }}">{ this.age(this.state.age) } </View>
+      <Navigator className="link" url="/pages/iview/index">iview 第三方组件(暂未通)</Navigator>
       <View className="division">---</View>
 
+      <Navigator className="link" url="/pages/wxs/index">WXS (不建议使用)</Navigator>
+      <View className="division">---</View>
     </View>);
   }
 }

@@ -14,6 +14,12 @@ class Component extends Taro.Component {
   config = {
     pages: [
       'pages/index/index',
+      // 雪碧图，图片的处理
+      'pages/img/index',
+      'pages/dva/index',
+      'pages/wxs/index',
+      'pages/component/index',
+      'pages/iview/index',
       'pages/jump/index',
     ],
     window: {
