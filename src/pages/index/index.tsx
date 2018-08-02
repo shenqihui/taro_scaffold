@@ -78,10 +78,10 @@ class Component extends Taro.Component {
       <B onClick={this.componentCallBack} />
       <B onClick={this.componentCallBack} />
 
-      <View>---</View>
+      <View className="division">---</View>
 
       <View className="" onClick={this.jump}>点击跳转</View>
-      <View>---</View>
+      <View className="division">---</View>
 
       <View className="">图片</View>
       <Image style={{ width: '22px', height: '22px' }} src={require('../../images/camera.png')} />
@@ -89,7 +89,7 @@ class Component extends Taro.Component {
       <Image style={{ width: '19px', height: '19px' }} src={require('../../images/circle_green.png')} />
       <Image style={{ width: '19px', height: '19px' }} src={require('../../images/exclamation_circle.png')} />
 
-      <View>---</View>
+      <View className="division">---</View>
 
       <View className="">雪碧图</View>
       <View className="sp sp-camera" />
@@ -97,7 +97,7 @@ class Component extends Taro.Component {
       <View className="sp sp-circle_green" />
       <View className="sp sp-exclamation_circle" />
 
-      <View>---</View>
+      <View className="division">---</View>
 
       <View>componentDidMount 后三秒会调用更新学生列表的请求。</View>
       <View className="">dva redux</View>
@@ -106,13 +106,13 @@ class Component extends Taro.Component {
         { JSON.stringify(this.props.studentState) }
       </View>
 
-      <View>---</View>
+      <View className="division">---</View>
 
       {
          /*
           <View>iView 组件</View>
           <IAvatar size="small">梁</IAvatar>
-          <View>---</View>
+          <View className="division">---</View>
         */
       }
 
@@ -123,7 +123,7 @@ class Component extends Taro.Component {
       {/*<wxs src="../../wxs/index.wxs" module="filters" />*/}
       <View>get: { get(this.state, 'age') }</View>
       <View data-age="{{ filters.age(153137899) }}">{ this.age(this.state.age) } </View>
-      <View>---</View>
+      <View className="division">---</View>
 
     </View>);
   }
