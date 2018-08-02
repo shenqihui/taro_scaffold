@@ -35,7 +35,7 @@ yarn spbuild : 打包形式的 sprite 任务。
 
 # tags
 
-- v0.4.0: taro 升级到 0.73 -> 1.0.0beta5 (先记录，待打 tag)
+- v0.4.0: taro 升级到 0.73 -> 1.0.0beta4，增加组件的引用例子（组件名必须和使用时候的名字一致） (先记录，待打 tag)
 - v0.3.0: 加入 wxs 的说明，以及 js 和 jsx 中导入的不同情况例子。（尚未支持 iview）
 - v0.2.0: 加入了 sprites
 - v0.1.3: 改用 axios
