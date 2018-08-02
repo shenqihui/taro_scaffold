@@ -1,9 +1,5 @@
-// import 的骚操作
-import * as moment from 'moment';
-import * as get from 'lodash/get';
-
 import Taro from '@tarojs/taro';
-import { View, Navigator } from '@tarojs/components';
+import { View, Text, Navigator } from '@tarojs/components';
 
 import { debugAdd } from '../../utils/debug';
 
@@ -39,6 +35,19 @@ class Component extends Taro.Component {
     });
   }
 
+  renderOtherJsx = () => {
+    let data = '';
+    try {
+      data = (<View>
+        <Text>这是render外的 jsx</Text>
+      </View>);
+    }
+    catch (error) {
+      data = '暂时不支持';
+    }
+    return data;
+  }
+
   render() {
     return (<View>
       <View url="/pages/component/index">点击一下例子，进行查看 </View>
@@ -60,6 +69,10 @@ class Component extends Taro.Component {
       <View className="division">---</View>
 
       <Navigator className="link" url="/pages/wxs/index">WXS (不建议使用)</Navigator>
+      <View className="division">---</View>
+
+      <View>render 外部的 jsx 渲染</View>
+      { this.renderOtherJsx() }
       <View className="division">---</View>
     </View>);
   }
