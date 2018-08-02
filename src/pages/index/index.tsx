@@ -5,6 +5,8 @@ import * as get from 'lodash/get';
 import Taro from '@tarojs/taro';
 import { View, Image } from '@tarojs/components';
 import { connect } from '@tarojs/redux';
+// import A from '../../components/A/index';
+import B from '../../components/B/index';
 
 // import IAvatar from '../../iview-weapp/avatar'
 
@@ -28,6 +30,7 @@ class Component extends Taro.Component {
     debugAdd('index', this);
     this.state = {
       age: 153137899,
+      x: [1, 2],
     };
   }
 
@@ -60,8 +63,23 @@ class Component extends Taro.Component {
     });
   }
 
+  componentCallBack = () => {
+    console.log('componentCallBack');
+  }
+
   render() {
     return (<View>
+      <View>组件引用</View>
+      {/*{
+        this.state.x.map((item, index) => {
+          return <A key={index} t={item} onClick={this.componentCallBack} />
+         })
+      }*/}
+      <B onClick={this.componentCallBack} />
+      <B onClick={this.componentCallBack} />
+
+      <View>---</View>
+
       <View className="" onClick={this.jump}>点击跳转</View>
       <View>---</View>
 
