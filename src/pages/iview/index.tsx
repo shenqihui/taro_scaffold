@@ -8,9 +8,9 @@ import './index.scss';
 export default class PageComponent extends Taro.Component {
   config = {
     navigationBarTitleText: 'iview 第三方组件例子',
-    "usingComponents": {
-       "IAvatar": '../../iview-weapp/avatar/index',
-       "i-button": "../../iview-weapp/button/index",
+    usingComponents: {
+       'i-avatar': '../../iview-weapp/avatar/index',
+       'i-button': '../../iview-weapp/button/index',
     }
   }
 
@@ -41,8 +41,8 @@ export default class PageComponent extends Taro.Component {
   render() {
     return (<View>
       <View>iView 组件</View>
+      <i-avatar size="small">梁山东省三</i-avatar>
       <i-button type="primary" onClick={this.handleClick}>这是一个按钮</i-button>
-      <IAvatar size="small">梁山东省三</IAvatar>
       <View className="division">---</View>
 
     </View>);
