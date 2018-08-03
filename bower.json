@@ -1,0 +1,23 @@
+{
+  "name": "taro_scaffold",
+  "description": "我的Taro脚手架",
+  "main": "src/app.tsx",
+  "authors": [
+    "大饼 <shenqihui0920@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/shenqihui/taro_scaffold",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/bower",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "zanui-weapp": "^3.1.1",
+    "iview-weapp": "https://github.com/TalkingData/iview-weapp.git#2.0.0"
+  }
+}
