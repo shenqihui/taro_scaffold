@@ -17,7 +17,7 @@ class Component extends Taro.Component {
   constructor(props) {
     super(props);
     debugAdd('iview', this);
-    console.log('暂时不可用');
+    console.log('第三方组件，暂时不可用');
     this.state = {};
   }
 
@@ -34,10 +34,14 @@ class Component extends Taro.Component {
 
   componentDidHide () { }
 
+  handleClick = () => {
+    console.log('handleClick');
+  }
+
   render() {
     return (<View>
       <View>iView 组件</View>
-      <i-button type="primary" bind:click="handleClick">这是一个按钮</i-button>
+      <i-button type="primary" onClick={this.handleClick}>这是一个按钮</i-button>
       <IAvatar size="small">梁山东省三</IAvatar>
       <View className="division">---</View>
 
