@@ -1,17 +1,10 @@
 import Taro from '@tarojs/taro';
 import { View } from '@tarojs/components';
-import { connect } from '@tarojs/redux';
 
 import { debugAdd } from '../../utils/debug';
 
 import './index.scss';
 
-@connect((state) => {
-  return {
-    studentState: state.student,
-    studentStateLoading: !!state.loading.models.student,
-  };
-})
 class Component extends Taro.Component {
   config = {
     navigationBarTitleText: '跳转的页面',
