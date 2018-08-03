@@ -5,7 +5,7 @@ import { debugAdd } from '../../utils/debug';
 
 import './index.scss';
 
-class Component extends Taro.Component {
+export default class PageComponent extends Taro.Component {
   config = {
     navigationBarTitleText: 'iview 第三方组件例子',
     "usingComponents": {
@@ -48,5 +48,3 @@ class Component extends Taro.Component {
     </View>);
   }
 }
-
-export default Component;

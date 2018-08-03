@@ -12,7 +12,7 @@ import './index.scss';
     studentStateLoading: !!state.loading.models.student,
   };
 })
-class Component extends Taro.Component {
+export default class PageComponent extends Taro.Component {
   config = {
     navigationBarTitleText: 'dva 例子',
   }
@@ -20,15 +20,19 @@ class Component extends Taro.Component {
   constructor(props) {
     super(props);
     debugAdd('dva', this);
-    this.state = {
-    };
+    this.state = {};
   }
 
   componentDidMount = () => {
     setTimeout(() => {
+      console.log('开始数据获取')
       this.props.dispatch({
         type: 'student/list',
         payload: {},
+      }).then((res) => {
+        console.log('数据获取成功', res);
+      }).catch((rej) => {
+        console.log('数据获取失败', rej);
       });
     }, 3000);
   }
@@ -58,4 +62,3 @@ class Component extends Taro.Component {
   }
 }
 
-export default Component;

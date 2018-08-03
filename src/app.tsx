@@ -10,7 +10,7 @@ import User from './utils/user';
 
 import './app.scss';
 
-class Component extends Taro.Component {
+export default class App extends Taro.Component {
   config = {
     pages: [
       'pages/index/index',
@@ -52,7 +52,7 @@ class Component extends Taro.Component {
   }
 }
 
-Taro.render(<Component />, document.getElementById('app'));
+Taro.render(<App />, document.getElementById('app'));
 
 globalAdd('Services', Services);
 globalAdd('Taro', Taro);
