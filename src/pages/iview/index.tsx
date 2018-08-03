@@ -9,9 +9,9 @@ export default class PageComponent extends Taro.Component {
   config = {
     navigationBarTitleText: 'iview 第三方组件例子',
     usingComponents: {
-       'i-avatar': '../../iview-weapp/avatar/index',
-       'i-button': '../../iview-weapp/button/index',
-    }
+       'i-avatar': '../../bower/iview-weapp/dist/avatar/index',
+       'i-button': '../../bower/iview-weapp/dist/button/index',
+    },
   }
 
   constructor(props) {

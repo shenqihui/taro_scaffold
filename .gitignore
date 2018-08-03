@@ -2,4 +2,4 @@ dist/
 .temp/
 node_modules/
 src/.sprites
-src/iview-weapp
+src/bower

@@ -30,15 +30,17 @@ yarn spbuild : 打包形式的 sprite 任务。
 # 如何使用
 
 - clone
+- yarn && bower install
 - 随便自己想怎么改怎么改动
 - 如果有需求，欢迎提 issue ，我会考察之后进行增加
+- 第三方组件使用 bower 管理，存放在 `src/bower` 里面，运行前使用先 `bower install`（确保本地已经安装 bower）
 
 # tags
 
 - v0.4.0:
   - taro 升级到 0.0.73 -> 1.0.0-beta.4 -> 1.0.0-beta.6
   - 增加组件的引用例子（组件名必须和使用时候的名字一致）
-  - 增加 iview 第三方组件使用的例子
+  - 增加 iview 等第三方组件使用的例子（使用 bower 管理组件）
   - 分离首页的例子到单独每个页面
 - v0.3.0: 加入 wxs 的说明，以及 js 和 jsx 中导入的不同情况例子。（尚未支持 iview）
 - v0.2.0: 加入了 sprites
