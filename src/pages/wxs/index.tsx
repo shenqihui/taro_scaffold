@@ -11,7 +11,7 @@ import { debugAdd } from '../../utils/debug';
 
 import './index.scss';
 
-class Component extends Taro.Component {
+export default class PageComponent extends Taro.Component {
   config = {
     navigationBarTitleText: 'wxs 例子',
   }
@@ -56,5 +56,3 @@ class Component extends Taro.Component {
     </View>);
   }
 }
-
-export default Component;

@@ -8,7 +8,7 @@ import { debugAdd } from '../../utils/debug';
 
 import './index.scss';
 
-class Component extends Taro.Component {
+class PageComponent extends Taro.Component {
   config = {
     navigationBarTitleText: 'component 例子',
   }
@@ -61,4 +61,4 @@ class Component extends Taro.Component {
   }
 }
 
-export default Component;
+export default PageComponent;

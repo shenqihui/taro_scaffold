@@ -5,7 +5,7 @@ import { debugAdd } from '../../utils/debug';
 
 import './index.scss';
 
-class Component extends Taro.Component {
+export default class PageComponent extends Taro.Component {
   config = {
     navigationBarTitleText: '跳转的页面',
   }
@@ -41,5 +41,3 @@ class Component extends Taro.Component {
     </View>);
   }
 }
-
-export default Component;
