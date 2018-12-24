@@ -35,18 +35,18 @@ export default class PageComponent extends Taro.Component {
     });
   }
 
-  renderOtherJsx = () => {
-    let data = '';
-    try {
-      data = (<View>
-        <Text>这是render外的 jsx</Text>
-      </View>);
-    }
-    catch (error) {
-      data = '暂时不支持';
-    }
-    return data;
-  }
+  // renderOtherJsx = () => {
+  //   let data = '';
+  //   try {
+  //     data = (<View>
+  //       <Text>这是render外的 jsx</Text>
+  //     </View>);
+  //   }
+  //   catch (error) {
+  //     data = '暂时不支持';
+  //   }
+  //   return data;
+  // }
 
   render() {
     return (<View>
@@ -65,14 +65,14 @@ export default class PageComponent extends Taro.Component {
       <Navigator className="link" url="/pages/dva/index">dva redux</Navigator>
       <View className="division">---</View>
 
-      <Navigator className="link" url="/pages/iview/index">iview 第三方组件(暂未通)</Navigator>
+      <Navigator className="link" url="/pages/iview/index">iview 第三方组件</Navigator>
       <View className="division">---</View>
 
       <Navigator className="link" url="/pages/wxs/index">WXS (不建议使用)</Navigator>
       <View className="division">---</View>
 
       <View>render 外部的 jsx 渲染</View>
-      { this.renderOtherJsx() }
+      {/*{ this.renderOtherJsx() }*/}
       <View className="division">---</View>
     </View>);
   }
