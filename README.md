@@ -37,6 +37,9 @@ yarn spbuild : 打包形式的 sprite 任务。
 
 # tags
 
+-v0.5.0
+  - taro 升级到 1.2.1
+  - 删除 pages/index 中 render 之外的 jsx 渲染的调用例子代码（不支持的）
 - v0.4.0:
   - taro 升级到 0.0.73 -> 1.0.0-beta.4 -> 1.0.0-beta.6
   - 增加组件的引用例子（组件名必须和使用时候的名字一致）
